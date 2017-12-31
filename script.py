@@ -25,9 +25,9 @@ for uname in fo:
         r=requests.get(put_url)
         d=json.loads(r.text)
         if bulk_activation:
-	        d["active"]=True
-        else:
-            d["active"]=False
+		d["active"]=True
+	else:
+		d["active"]=False
         payload = json.dumps(d)
         r1 = requests.put(put_url, data=payload)
         print(uname.rstrip()+": Activation successfull")
